@@ -51,7 +51,10 @@ const setVerbosity = function(x){
  */
 const debug = function(message){
 	if(verbosity > VERBOSITY.INFO){
-		output(gutil.colors.gray(message));
+		if(typeof message === 'string'){
+			message = gutil.colors.gray(message);
+		}
+		output(message);
 	}
 };
 
@@ -63,7 +66,10 @@ const debug = function(message){
  */
 const info = function(message){
 	if(verbosity > VERBOSITY.WARNING){
-		output(gutil.colors.white(message));
+		if(typeof message === 'string'){
+			message = gutil.colors.white(message);
+		}
+		output(message);
 	}
 };
 
@@ -75,7 +81,10 @@ const info = function(message){
  */
 const warning = function(message){
 	if(verbosity > VERBOSITY.ERROR){
-		output(gutil.colors.yellow(message));
+		if(typeof message === 'string'){
+			message = gutil.colors.yellow(message);
+		}
+		output(message);
 	}
 };
 
@@ -87,7 +96,10 @@ const warning = function(message){
  */
 const error = function(message){
 	if(verbosity > VERBOSITY.NONE){
-		output(gutil.colors.red(message));
+		if(typeof message === 'string'){
+			message = gutil.colors.red(message);
+		}
+		output(message);
 	}
 };
 
