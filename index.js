@@ -28,12 +28,12 @@ const VERBOSITY = {
 	ALL: 4,
 };
 
-let verbosity = process.env['VERBOSITY'] || VERBOSITY.INFO;
+let verbosity = process.env.PRTL_VERBOSITY || VERBOSITY.INFO;
 
 /**
  * Set the verbosity level.
  *
- * The default verbosity level is: `process.env['VERBOSITY'] || VERBOSITY.WARNING;`
+ * The default verbosity level is: `process.env.PRTL_VERBOSITY || VERBOSITY.INFO;`
  *
  * @param {(VERBOSITY|number)} x - Verbosity level
  * @static
