@@ -1,4 +1,4 @@
-# @studyportals/node-log@v1.1.0
+# @studyportals/node-log@v1.1.2
 
 <a href="https://www.npmjs.com/package/@studyportals/node-log" title="View this project on NPM" target="_blank"><img src="https://img.shields.io/npm/v/@studyportals/node-log.svg?style=flat" alt="NPM version" /></a>
 <a href="https://www.npmjs.com/package/@studyportals/node-log" title="View this project on NPM" target="_blank"><img src="https://img.shields.io/npm/l/@studyportals/node-log.svg?style=flat" alt="NPM license" /></a>
@@ -15,10 +15,10 @@ Logging support for Node
 * [@studyportals/log](#module_@studyportals/log)
     * [.VERBOSITY](#module_@studyportals/log.VERBOSITY) : <code>enum</code>
     * [.setVerbosity(x)](#module_@studyportals/log.setVerbosity) ⇒
-    * [.debug(message)](#module_@studyportals/log.debug) ⇒
-    * [.info(message)](#module_@studyportals/log.info) ⇒
-    * [.warning(message)](#module_@studyportals/log.warning) ⇒
-    * [.error(message)](#module_@studyportals/log.error) ⇒
+    * [.debug([message])](#module_@studyportals/log.debug) ⇒
+    * [.info([message])](#module_@studyportals/log.info) ⇒
+    * [.warning([message])](#module_@studyportals/log.warning) ⇒
+    * [.error([message])](#module_@studyportals/log.error) ⇒
 
 <a name="module_@studyportals/log.VERBOSITY"></a>
 
@@ -42,7 +42,7 @@ Default options for verbosity
 ### @studyportals/log.setVerbosity(x) ⇒
 Set the verbosity level.
 
-The default verbosity level is: `process.env['VERBOSITY'] || VERBOSITY.WARNING;`
+The default verbosity level is: `process.env.PRTL_VERBOSITY || VERBOSITY.INFO;`
 
 **Kind**: static method of [<code>@studyportals/log</code>](#module_@studyportals/log)  
 **Returns**: void  
@@ -53,51 +53,51 @@ The default verbosity level is: `process.env['VERBOSITY'] || VERBOSITY.WARNING;`
 
 <a name="module_@studyportals/log.debug"></a>
 
-### @studyportals/log.debug(message) ⇒
+### @studyportals/log.debug([message]) ⇒
 Debug message (gray)
 
 **Kind**: static method of [<code>@studyportals/log</code>](#module_@studyportals/log)  
-**Returns**: void  
+**Returns**: boolean  
 
 | Param | Type |
 | --- | --- |
-| message | <code>string</code> | 
+| [message] | <code>string</code> | 
 
 <a name="module_@studyportals/log.info"></a>
 
-### @studyportals/log.info(message) ⇒
+### @studyportals/log.info([message]) ⇒
 Info message (white)
 
 **Kind**: static method of [<code>@studyportals/log</code>](#module_@studyportals/log)  
-**Returns**: void  
+**Returns**: boolean  
 
 | Param | Type |
 | --- | --- |
-| message | <code>string</code> | 
+| [message] | <code>string</code> | 
 
 <a name="module_@studyportals/log.warning"></a>
 
-### @studyportals/log.warning(message) ⇒
+### @studyportals/log.warning([message]) ⇒
 Warning message (yellow)
 
 **Kind**: static method of [<code>@studyportals/log</code>](#module_@studyportals/log)  
-**Returns**: void  
+**Returns**: boolean  
 
 | Param | Type |
 | --- | --- |
-| message | <code>string</code> | 
+| [message] | <code>string</code> | 
 
 <a name="module_@studyportals/log.error"></a>
 
-### @studyportals/log.error(message) ⇒
+### @studyportals/log.error([message]) ⇒
 Error message (red)
 
 **Kind**: static method of [<code>@studyportals/log</code>](#module_@studyportals/log)  
-**Returns**: void  
+**Returns**: boolean  
 
 | Param | Type |
 | --- | --- |
-| message | <code>string</code> | 
+| [message] | <code>string</code> | 
 
 
-_README.md generated at: Tue Sep 05 2017 13:42:10 GMT+0200 (W. Europe Daylight Time)_
+_README.md generated at: Thu Oct 05 2017 14:42:43 GMT+0200 (CEST)_

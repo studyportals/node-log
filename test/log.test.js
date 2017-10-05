@@ -1,16 +1,30 @@
 "use strict";
 
 const log = require('./../');
+const chai = require('chai');
 
-it('It should show different kind of error messages without throwing an exception.', () =>{
+describe('It should show different kind of error messages without throwing an exception.', function(){
 
-	log.setVerbosity(log.VERBOSITY.ALL);
+	it('It should show all messages.', () =>{
 
-	log.debug('Debug message');
-	log.debug({
-		key: 'value'
+		log.setVerbosity(log.VERBOSITY.DEBUG);
+
+		chai.expect(log.debug()).to.be.true;
+		chai.expect(log.debug('Debug message')).to.be.true;
+		chai.expect(log.debug({key: 'value'})).to.be.true;
+		chai.expect(log.info('Info message')).to.be.true;
+		chai.expect(log.warning('Warning message')).to.be.true;
+		chai.expect(log.error('Error message')).to.be.true;
 	});
-	log.info('Info message');
-	log.warning('Warning message');
-	log.error('Error message');
+
+	it('It should not show debug messages.', () =>{
+
+		log.setVerbosity(log.VERBOSITY.INFO);
+
+		chai.expect(log.debug('Debug message')).to.be.false;
+		chai.expect(log.debug({key: 'value'})).to.be.false;
+		chai.expect(log.info('Info message')).to.be.true;
+		chai.expect(log.warning('Warning message')).to.be.true;
+		chai.expect(log.error('Error message')).to.be.true;
+	});
 });

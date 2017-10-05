@@ -45,72 +45,89 @@ const setVerbosity = function(x){
 
 /**
  * Debug message (gray)
- * @param {string} message
+ * @param {string} [message]
  * @static
- * @return void
+ * @return boolean
  */
 const debug = function(message){
-	if(verbosity > VERBOSITY.INFO){
-		if(typeof message === 'string'){
-			message = gutil.colors.gray(message);
-		}
-		output(message);
+
+	if(verbosity <= VERBOSITY.INFO){
+
+		return false;
 	}
+
+	if(message && typeof message === 'string'){
+		message = gutil.colors.gray(message);
+	}
+	return output(message);
 };
 
 /**
  * Info message (white)
- * @param {string} message
+ * @param {string} [message]
  * @static
- * @return void
+ * @return boolean
  */
 const info = function(message){
-	if(verbosity > VERBOSITY.WARNING){
-		if(typeof message === 'string'){
-			message = gutil.colors.white(message);
-		}
-		output(message);
+	if(verbosity <= VERBOSITY.WARNING){
+
+		return false;
 	}
+
+	if(message && typeof message === 'string'){
+		message = gutil.colors.white(message);
+	}
+	return output(message);
 };
 
 /**
  * Warning message (yellow)
- * @param {string} message
+ * @param {string} [message]
  * @static
- * @return void
+ * @return boolean
  */
 const warning = function(message){
-	if(verbosity > VERBOSITY.ERROR){
-		if(typeof message === 'string'){
-			message = gutil.colors.yellow(message);
-		}
-		output(message);
+	if(verbosity <= VERBOSITY.ERROR){
+
+		return false;
 	}
+
+	if(message && typeof message === 'string'){
+		message = gutil.colors.yellow(message);
+	}
+	return output(message);
 };
 
 /**
  * Error message (red)
- * @param {string} message
+ * @param {string} [message]
  * @static
- * @return void
+ * @return boolean
  */
 const error = function(message){
-	if(verbosity > VERBOSITY.NONE){
-		if(typeof message === 'string'){
-			message = gutil.colors.red(message);
-		}
-		output(message);
+	if(verbosity <= VERBOSITY.NONE){
+
+		return false;
 	}
+
+	if(message && typeof message === 'string'){
+		message = gutil.colors.red(message);
+	}
+	return output(message);
 };
 
 /**
  * Message
  * @param {string} message
- * @return void
+ * @return boolean
  * @private
  */
 const output = function(message){
-	gutil.log(message);
+	if(message){
+
+		gutil.log(message);
+	}
+	return true;
 };
 
 module.exports = {
