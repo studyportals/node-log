@@ -1,4 +1,4 @@
-# @studyportals/node-log@v1.1.1-0
+# @studyportals/node-log@v1.1.1
 
 <a href="https://www.npmjs.com/package/@studyportals/node-log" title="View this project on NPM" target="_blank"><img src="https://img.shields.io/npm/v/@studyportals/node-log.svg?style=flat" alt="NPM version" /></a>
 <a href="https://www.npmjs.com/package/@studyportals/node-log" title="View this project on NPM" target="_blank"><img src="https://img.shields.io/npm/l/@studyportals/node-log.svg?style=flat" alt="NPM license" /></a>
@@ -100,4 +100,4 @@ Error message (red)
 | [message] | <code>string</code> | 
 
 
-_README.md generated at: Thu Oct 05 2017 13:09:00 GMT+0200 (CEST)_
+_README.md generated at: Thu Oct 05 2017 14:40:48 GMT+0200 (CEST)_
