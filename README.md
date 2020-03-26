@@ -10,6 +10,10 @@ Logging support for Node
 
 <a name="module_@studyportals/log"></a>
 
+## Publishing the package on the GitHub Package Registry
+1. Ensure you are authenticated to the GitHub Package Registry. [This section](https://help.github.com/en/github/managing-packages-with-github-package-registry/configuring-npm-for-use-with-github-package-registry#authenticating-to-github-package-registry) explains how.
+2. Run `npm publish`
+
 ## @studyportals/log
 
 * [@studyportals/log](#module_@studyportals/log)
